@@ -123,4 +123,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+REMOVE_DIR = str(os.getcwd().split('\\')[-1])
+MEDIA_DIR =str(BASE_DIR)
+MEDIA_DIR = MEDIA_DIR.replace(REMOVE_DIR,'')
+MEDIA_ROOT = os.path.join(MEDIA_DIR, 'media')
